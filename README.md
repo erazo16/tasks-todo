@@ -48,3 +48,6 @@ export default tseslint.config({
   },
 });
 ```
+### link deploy
+https://main--radiant-moonbeam-7d1389.netlify.app
+
