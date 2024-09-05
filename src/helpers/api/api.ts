@@ -5,7 +5,7 @@ import { Task } from '../../types';
 export const getAllTasks = async (): Promise<Task[]> => {
   try {
     const response: AxiosResponse<Task[]> = await axios.get<Task[]>(
-      'api/Tasks',
+      'https://tasks-manager-test.fly.dev/api/Tasks',
       {
         headers: {
           'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ export const getAllTasks = async (): Promise<Task[]> => {
 export const updateTask = async (task: Task): Promise<Task> => {
   try {
     const response: AxiosResponse<Task> = await axios.put<Task>(
-      `api/tasks/${task.id}`,
+      `https://tasks-manager-test.fly.dev/api/tasks/${task.id}`,
       task,
       {
         headers: {
@@ -43,7 +43,7 @@ export const updateTask = async (task: Task): Promise<Task> => {
 
 export const deleteTask = async (id: string): Promise<void> => {
   try {
-    await axios.delete(`api/tasks/${id}`, {
+    await axios.delete(`https://tasks-manager-test.fly.dev/api/tasks/${id}`, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -57,7 +57,7 @@ export const deleteTask = async (id: string): Promise<void> => {
 export const createTask = async (task: Task): Promise<Task> => {
   try {
     const response: AxiosResponse<Task> = await axios.post<Task>(
-      'api/tasks',
+      'https://tasks-manager-test.fly.dev/api/tasks',
       task,
       {
         headers: {
