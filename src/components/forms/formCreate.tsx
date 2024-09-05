@@ -4,7 +4,6 @@ import {
   Input,
   Button,
   DatePicker,
-  InputNumber,
   Upload,
   message,
   Select,
@@ -31,7 +30,7 @@ const CreateForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
     onSubmit({ ...values, due_date: formated, image: imageBase64 });
   };
 
-  const validateName = (rule: any, value: string) => {
+  const validateName = (_: any, value: string) => {
     if (!value || value.length < 3 || value.length > 50) {
       return Promise.reject('El nombre debe tener entre 3 y 50 caracteres.');
     }
@@ -48,7 +47,7 @@ const CreateForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
     return Promise.resolve();
   };
 
-  const validateDate = (rule: any, value: any) => {
+  const validateDate = (_: any, value: any) => {
     if (!value || value.isBefore(dayjs(), 'day')) {
       return Promise.reject(
         'La fecha de entrega no puede ser menor a la fecha de creación.'
@@ -134,7 +133,7 @@ const CreateForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
 
       <Form.Item name="image" label="Imagen de la tarea">
         <Upload
-          customRequest={({ file, onSuccess }) => {
+          customRequest={({ onSuccess }) => {
             setTimeout(() => onSuccess && onSuccess('ok'), 0);
           }}
           showUploadList={false}

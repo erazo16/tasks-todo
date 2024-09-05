@@ -1,4 +1,4 @@
-import { FaSearch, FaList, FaClock } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
 
 export const Header = () => {
   return (

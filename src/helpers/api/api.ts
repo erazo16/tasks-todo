@@ -1,9 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { Task } from '../../types';
 
-interface ApiResponse {
-  data: Task[];
-}
+
 export const getAllTasks = async (): Promise<Task[]> => {
   try {
     const response: AxiosResponse<Task[]> = await axios.get<Task[]>(

@@ -10,7 +10,6 @@ import {
   setInprogress,
   setTodo,
   takeColumn,
-  updateStatusTasks,
 } from '../../redux/tasks/tasks';
 import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import Card from '../../components/card';
@@ -85,10 +84,10 @@ export default function Home() {
       <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
         <div className="flex flex-wrap justify-around">
           <div className="m-32  flex justify-around w-full min-h-96">
-            {Object.entries(columnsData).map(([columnId, column], index) => {
+            {Object.entries(columnsData).map(([columnId, column], _) => {
               return (
                 <Droppable key={columnId} droppableId={columnId}>
-                  {(provided, snapshot) => (
+                  {(provided, _) => (
                     <div
                       className="min-h-full flex bg-[#2a2b2b] flex-col min-w-80 rounded-md p-4 mr-11"
                       ref={provided.innerRef}

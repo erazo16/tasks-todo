@@ -31,7 +31,7 @@ const initialState: TaskState = {
   tasks: [],
   columns: {
     [status.TODO]: {
-      title: 'To-do',
+      title: 'Por hacer',
       items: [],
     },
     [status.INPROGRESS]: {
